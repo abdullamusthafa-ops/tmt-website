@@ -42,6 +42,7 @@ overflow-x:hidden;
 }
 html,
 body { height: 100%;position:relative;  }
+html { scroll-behavior: smooth; }
 h1,
 h2,
 h3,
@@ -1783,14 +1784,14 @@ font-weight: 600;
 
 /* Card container */
 .program-card {
-  width: 301px;
+  width: 100%;
   min-height: 140px;
   padding: 24px;
-  border: 1px solid #347481;
-  border-radius: 40px;
-  background: transparent;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  margin-top: 30px;
+  border: 1px solid rgba(52,116,129,0.6);
+  border-radius: 20px;
+  background: rgba(15,22,30,0.7);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  margin-top: 0;
 }
 
 /* Hover effect */
@@ -2518,3 +2519,81 @@ footer h5 {
 	background: rgba(10,16,22,0.9) !important;
 	border: 1px solid rgba(90,206,229,0.4) !important;
 }
+
+/* --- Screen reader only (visually hidden labels) --- */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* --- Focus rings for keyboard navigation --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+	outline: 2px solid rgba(90,206,229,0.7);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+/* --- Cursor pointer on all interactive cards --- */
+.stat-card,
+.buy_sell_list,
+.program-card,
+.process-step,
+.single_about,
+.tmt_feature {
+	cursor: pointer;
+}
+
+/* --- Stat counter animation --- */
+.stat-number {
+	transition: opacity 0.3s ease;
+}
+.stat-number.counting {
+	opacity: 0.7;
+}
+
+/* --- Prefers Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+	.fade-up,
+	.reveal-up {
+		opacity: 1 !important;
+		transform: none !important;
+		filter: none !important;
+	}
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+/* --- Section entry reveal (applied via JS IntersectionObserver) --- */
+.section-reveal {
+	opacity: 0;
+	transform: translateY(32px);
+	transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+	            transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.section-reveal.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+.section-reveal.delay-100 { transition-delay: 0.1s; }
+.section-reveal.delay-200 { transition-delay: 0.2s; }
+.section-reveal.delay-300 { transition-delay: 0.3s; }
+.section-reveal.delay-400 { transition-delay: 0.4s; }

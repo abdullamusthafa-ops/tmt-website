@@ -62,9 +62,10 @@ h1, h2, h3, h4, h5 {
     }
 }
 	.hero-grad {
-		background: linear-gradient(to bottom, #ffff 0%, #dfe4e7 23%, #98a1a5 100%);
+		background: linear-gradient(135deg, #5ACEE5 0%, #7dd8f0 40%, #c8eef7 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+		background-clip: text;
 		padding: 0px 0px;
 		display: block;
 	}
@@ -184,11 +185,11 @@ h1, h2, h3, h4, h5 {
 	.program-card {
 		width: 100%;
 		min-height: 160px;
-		padding: 35px 40px;
-		border: 1px solid #347481;
-		border-radius: 40px;
-		background: #151515;
-		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+		padding: 28px 28px;
+		border: 1px solid rgba(52, 116, 129, 0.6);
+		border-radius: 20px;
+		background: rgba(15, 22, 30, 0.7);
+		transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 	}
 
 	/* Hover effect */
@@ -750,11 +751,11 @@ h1, h2, h3, h4, h5 {
 	<!-- END ABOUT -->
 
 	<section class="section1">
-		<h2 class="hero-grad" style="font-size: 44px; font-weight: 700; letter-spacing: -0.8px;">What Makes Us Different</h2>
+		<h2 class="hero-grad" style="font-size: 44px; font-weight: 600; letter-spacing: -1px;">What Makes Us Different</h2>
 		<div class="content">
 			<div class="left">
 				<div class="float-img">
-					<img src="assets/img/difference-vector.png" alt="" width="300px">
+					<img src="assets/img/difference-vector.png" alt="TMT Consultancy differentiators" width="300" loading="lazy">
 				</div>
 			</div>
 
@@ -869,7 +870,7 @@ h1, h2, h3, h4, h5 {
 				<!-- RIGHT -->
 				<div class="tmt-col-lg-4">
 					<div class="app_img">
-						<img src="assets/img/programs1.png" alt="">
+						<img src="assets/img/programs1.png" alt="Investment programs illustration" loading="lazy">
 					</div>
 				</div>
 
@@ -952,7 +953,7 @@ h1, h2, h3, h4, h5 {
 				<!-- CENTER IMAGE -->
 				<div class="col-lg-4 col-sm-12 col-xs-12 wow fadeInDown">
 					<div class="portfolio_list_img">
-						<img src="assets/img/serve1.png" class="img-fluid" alt="" />
+						<img src="assets/img/serve1.png" class="img-fluid" alt="Who TMT Consultancy serves" loading="lazy" />
 					</div>
 				</div>
 
@@ -1015,19 +1016,23 @@ h1, h2, h3, h4, h5 {
 							onsubmit="return validation();">
 							<div class="row">
 								<div class="form-group col-md-6">
-									<input type="text" name="name" class="form-control" placeholder="Name"
+									<label for="contact-name" class="sr-only">Name</label>
+									<input type="text" id="contact-name" name="name" class="form-control" placeholder="Name"
 										required="required">
 								</div>
 								<div class="form-group col-md-6">
-									<input type="email" name="email" class="form-control" placeholder="Email"
+									<label for="contact-email" class="sr-only">Email</label>
+									<input type="email" id="contact-email" name="email" class="form-control" placeholder="Email"
 										required="required">
 								</div>
 								<div class="form-group col-md-12">
-									<input type="text" name="subject" class="form-control" placeholder="Subject"
+									<label for="contact-subject" class="sr-only">Subject</label>
+									<input type="text" id="contact-subject" name="subject" class="form-control" placeholder="Subject"
 										required="required">
 								</div>
 								<div class="form-group col-md-12">
-									<textarea rows="6" name="message" class="form-control" placeholder="Your Message"
+									<label for="contact-message" class="sr-only">Your Message</label>
+									<textarea rows="6" id="contact-message" name="message" class="form-control" placeholder="Your Message"
 										required="required"></textarea>
 								</div>
 								<div class="col-md-12 text-center">
@@ -1383,6 +1388,83 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		});
 	</script> -->
+
+<script>
+/* ============================================================
+   STAT COUNTER ANIMATION
+   Counts up numbers when the stats section scrolls into view
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", function () {
+	const statNumbers = document.querySelectorAll('.stat-number');
+	if (!statNumbers.length) return;
+
+	function animateCounter(el) {
+		const raw = el.textContent.trim();
+		const suffix = raw.replace(/[\d.]/g, '');
+		const target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+		if (isNaN(target)) return;
+
+		const isDecimal = raw.includes('.');
+		const duration = 1800;
+		const steps = 60;
+		const stepTime = duration / steps;
+		let current = 0;
+		const increment = target / steps;
+
+		el.textContent = isDecimal ? '0.0' + suffix : '0' + suffix;
+
+		const timer = setInterval(() => {
+			current += increment;
+			if (current >= target) {
+				current = target;
+				clearInterval(timer);
+			}
+			el.textContent = (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
+		}, stepTime);
+	}
+
+	const statsObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				statNumbers.forEach(animateCounter);
+				statsObserver.disconnect();
+			}
+		});
+	}, { threshold: 0.4 });
+
+	const statsSection = document.getElementById('stats');
+	if (statsSection) statsObserver.observe(statsSection);
+});
+
+/* ============================================================
+   SECTION REVEAL — stat cards, program cards, etc.
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", function () {
+	const revealTargets = document.querySelectorAll(
+		'.stat-card, .program-card, .process-step, .buy_sell_list, .section1 .item'
+	);
+
+	const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	if (prefersReduced) return;
+
+	revealTargets.forEach((el, i) => {
+		el.classList.add('section-reveal');
+		const delay = (i % 4) * 100;
+		el.classList.add('delay-' + delay);
+	});
+
+	const revealObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible');
+				revealObserver.unobserve(entry.target);
+			}
+		});
+	}, { threshold: 0.15 });
+
+	revealTargets.forEach(el => revealObserver.observe(el));
+});
+</script>
 </body>
 
 </html>
