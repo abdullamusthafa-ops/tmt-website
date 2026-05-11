@@ -18,6 +18,7 @@
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap&subset=latin-ext"
 		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<!-- Font Awesome CSS -->
 	<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/fonts/themify-icons.css">
@@ -41,7 +42,10 @@
 
 <style>
 	html, body {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'IBM Plex Sans', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'IBM Plex Sans', 'Poppins', sans-serif !important;
 }
 	.home_bg {
     background-image: url('./assets/img/hero-bg.png');
@@ -610,6 +614,22 @@
 </a>
 							</center>
 						</div>
+						<div class="hero-trust fade-up delay-2">
+							<span class="hero-trust-item">
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5ACEE5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+								Dubai, UAE Registered
+							</span>
+							<span class="hero-trust-divider"></span>
+							<span class="hero-trust-item">
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5ACEE5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+								500+ Active Investors
+							</span>
+							<span class="hero-trust-divider"></span>
+							<span class="hero-trust-item">
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5ACEE5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+								Free Consultation
+							</span>
+						</div>
 					</div>
 				</div><!--- END COL -->
 
@@ -619,24 +639,36 @@
 	<!-- END  HOME -->
 
 	<!-- START STATS -->
-	<section id="stats" style="background:#000; padding: 60px 0; border-top: 1px solid rgba(90,206,229,0.15); border-bottom: 1px solid rgba(90,206,229,0.15);">
+	<section id="stats">
 		<div class="container">
-			<div class="row text-center" style="justify-content:center;">
-				<div class="col-lg-3 col-sm-6 col-xs-12" style="padding:20px 30px; border-right: 1px solid rgba(90,206,229,0.15);">
-					<h2 style="font-size:42px; font-weight:700; background: linear-gradient(90deg,#5ACEE5,#499FE5); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">500+</h2>
-					<p style="color:#aaa; font-size:15px; margin-top:6px;">Active Investors</p>
+			<div class="stats-grid">
+				<div class="stat-card">
+					<div class="stat-icon">
+						<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5ACEE5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+					</div>
+					<h2 class="stat-number">500+</h2>
+					<p class="stat-label">Active Investors</p>
 				</div>
-				<div class="col-lg-3 col-sm-6 col-xs-12" style="padding:20px 30px; border-right: 1px solid rgba(90,206,229,0.15);">
-					<h2 style="font-size:42px; font-weight:700; background: linear-gradient(90deg,#5ACEE5,#499FE5); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">3.5%</h2>
-					<p style="color:#aaa; font-size:15px; margin-top:6px;">Average Monthly Returns</p>
+				<div class="stat-card">
+					<div class="stat-icon">
+						<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5ACEE5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+					</div>
+					<h2 class="stat-number">3.5%</h2>
+					<p class="stat-label">Average Monthly Returns</p>
 				</div>
-				<div class="col-lg-3 col-sm-6 col-xs-12" style="padding:20px 30px; border-right: 1px solid rgba(90,206,229,0.15);">
-					<h2 style="font-size:42px; font-weight:700; background: linear-gradient(90deg,#5ACEE5,#499FE5); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">42%+</h2>
-					<p style="color:#aaa; font-size:15px; margin-top:6px;">Annual Return</p>
+				<div class="stat-card">
+					<div class="stat-icon">
+						<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5ACEE5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+					</div>
+					<h2 class="stat-number">42%+</h2>
+					<p class="stat-label">Annual Return</p>
 				</div>
-				<div class="col-lg-3 col-sm-6 col-xs-12" style="padding:20px 30px;">
-					<h2 style="font-size:42px; font-weight:700; background: linear-gradient(90deg,#5ACEE5,#499FE5); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">8+</h2>
-					<p style="color:#aaa; font-size:15px; margin-top:6px;">Investment Programs</p>
+				<div class="stat-card">
+					<div class="stat-icon">
+						<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5ACEE5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+					</div>
+					<h2 class="stat-number">8+</h2>
+					<p class="stat-label">Investment Programs</p>
 				</div>
 			</div>
 		</div>
@@ -662,44 +694,60 @@
 
 			<div class="programs__grid">
 				<article class="program-card">
+					<div class="card-icon">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+					</div>
 					<h3 class="program-card__title">Forex Investment</h3>
-					<p class="program-card__desc">Trade major and minor currency pairs
-						with structured risk management</p>
+					<p class="program-card__desc">Trade major and minor currency pairs with structured risk management</p>
 				</article>
 				<article class="program-card">
-					<h3 class="program-card__title">Commodity investment</h3>
-					<p class="program-card__desc">Diversify into global commodities,
-						including energy, agriculture, and metals</p>
+					<div class="card-icon">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+					</div>
+					<h3 class="program-card__title">Commodity Investment</h3>
+					<p class="program-card__desc">Diversify into global commodities, including energy, agriculture, and metals</p>
 				</article>
 				<article class="program-card">
+					<div class="card-icon">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+					</div>
 					<h3 class="program-card__title">Gold & Precious Metals</h3>
-					<p class="program-card__desc">Safe-haven assets including gold, silver,
-						and platinum.</p>
+					<p class="program-card__desc">Safe-haven assets including gold, silver, and platinum</p>
 				</article>
 				<article class="program-card">
+					<div class="card-icon">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+					</div>
 					<h3 class="program-card__title">Index Solutions</h3>
-					<p class="program-card__desc">Invest in major global indices like the
-						S&P 500 and NASDAQ</p>
+					<p class="program-card__desc">Invest in major global indices like the S&P 500 and NASDAQ</p>
 				</article>
 				<article class="program-card">
+					<div class="card-icon">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+					</div>
 					<h3 class="program-card__title">Futures Management</h3>
-					<p class="program-card__desc">Strategic futures trading for hedging
-						and speculative gains</p>
+					<p class="program-card__desc">Strategic futures trading for hedging and speculative gains</p>
 				</article>
 				<article class="program-card">
+					<div class="card-icon">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+					</div>
 					<h3 class="program-card__title">Options & Hedging Strategies</h3>
-					<p class="program-card__desc">Protect and optimize your portfolio using
-						advanced options.</p>
+					<p class="program-card__desc">Protect and optimize your portfolio using advanced options</p>
 				</article>
 				<article class="program-card">
+					<div class="card-icon">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+					</div>
 					<h3 class="program-card__title">Stock Market Program</h3>
-					<p class="program-card__desc">Access curated equity portfolios designed
-						for sustainable growth</p>
+					<p class="program-card__desc">Access curated equity portfolios designed for sustainable growth</p>
 				</article>
 				<article class="program-card">
+					<div class="card-icon">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+					</div>
 					<h3 class="program-card__title">CFD Portfolio</h3>
-					<p class="program-card__desc">Access multiple markets through
-						flexible CFD trading</p>
+					<p class="program-card__desc">Access multiple markets through flexible CFD trading</p>
 				</article>
 			</div>
 			<div class="scroll-dots">
@@ -721,34 +769,42 @@
 
 			<div class="right">
 				<div class="item">
-					<h3 style="font-size: 24px; font-weight: 500;">Proven Performance</h3>
-					<p class="hero-grad" style="font-size: 16px; font-weight: 400;">
-						Consistent returns across multiple market cycles. <br>
-						Our strategies deliver an average of 3.5% monthly with minimal drawdowns.
+					<div class="item-header">
+						<span class="item-badge">01</span>
+						<h3 style="font-size: 22px; font-weight: 600;">Proven Performance</h3>
+					</div>
+					<p style="font-size: 15px; font-weight: 400; color: #8fa8b2; line-height: 1.6;">
+						Consistent returns across multiple market cycles. Our strategies deliver an average of 3.5% monthly with minimal drawdowns.
 					</p>
 				</div>
 
 				<div class="item">
-					<h3 style="font-size: 24px; font-weight: 500;">Smart Portfolio Adjustments – Realtime</h3>
-					<p class="hero-grad" style="font-size: 16px; font-weight: 400;">
-						Dynamic rebalancing and continuous optimization ensure maximum
-						risk-adjusted returns.
+					<div class="item-header">
+						<span class="item-badge">02</span>
+						<h3 style="font-size: 22px; font-weight: 600;">Smart Portfolio Adjustments</h3>
+					</div>
+					<p style="font-size: 15px; font-weight: 400; color: #8fa8b2; line-height: 1.6;">
+						Dynamic rebalancing and continuous optimization ensure maximum risk-adjusted returns in real time.
 					</p>
 				</div>
 
 				<div class="item">
-					<h3 style="font-size: 24px; font-weight: 500;">Quant + Professional Trading – AI Powered</h3>
-					<p class="hero-grad" style="font-size: 16px; font-weight: 400;">
-						A hybrid model that blends algorithmic accuracy with expert
-						human decision-making.
+					<div class="item-header">
+						<span class="item-badge">03</span>
+						<h3 style="font-size: 22px; font-weight: 600;">Quant + AI-Powered Trading</h3>
+					</div>
+					<p style="font-size: 15px; font-weight: 400; color: #8fa8b2; line-height: 1.6;">
+						A hybrid model that blends algorithmic accuracy with expert human decision-making.
 					</p>
 				</div>
 
 				<div class="item">
-					<h3 style="font-size: 24px; font-weight: 500;">Reporting & Analytics – Quarterly Reports</h3>
-					<p class="hero-grad" style="font-size: 16px; font-weight: 400;">
-						Clear, data-driven quarterly updates designed for complete transparency
-						and <br>informed decision-making.
+					<div class="item-header">
+						<span class="item-badge">04</span>
+						<h3 style="font-size: 22px; font-weight: 600;">Quarterly Reports & Analytics</h3>
+					</div>
+					<p style="font-size: 15px; font-weight: 400; color: #8fa8b2; line-height: 1.6;">
+						Clear, data-driven quarterly updates designed for complete transparency and informed decision-making.
 					</p>
 				</div>
 			</div>
