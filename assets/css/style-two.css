@@ -348,9 +348,11 @@ border:2px solid #56C3DE;
     padding-right: 0;
 }
 .navbar-custom.nav-sticky {
-    background-color: #000 !important;
+    background-color: rgba(0, 8, 15, 0.92) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 8px 0px;
-    border-bottom: none;
+    border-bottom: 1px solid rgba(90, 206, 229, 0.12);
 }
 @media (max-width: 1023px) {
     .navbar-custom .nav-social {
@@ -1632,6 +1634,26 @@ font-weight: 600;
   flex-direction: column;
   padding: 80px 20px 120px;
   margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section1::before {
+  content: "";
+  position: absolute;
+  left: -200px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(90,206,229,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section1 > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section1 h2 {
@@ -1811,13 +1833,28 @@ font-weight: 600;
 /* Process steps start*/
   .process-steps {
     display: flex;
-    gap: 40px;
+    gap: 0;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  /* Arrow connector between steps */
+  .process-step:not(:last-child)::after {
+    content: "→";
+    font-size: 28px;
+    color: #5ACEE5;
+    opacity: 0.5;
+    position: relative;
+    top: 40px;
+    margin: 0 10px;
+    flex-shrink: 0;
   }
 
   .process-step {
     display: flex;
     cursor: pointer;
-    max-width: 350px;
+    max-width: 300px;
+    flex: 1;
     border-radius: 6px;
     transition: all 0.3s ease;
     color: #fff;
