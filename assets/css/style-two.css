@@ -1848,7 +1848,7 @@ font-weight: 600;
   .process-steps {
     display: flex;
     gap: 0;
-    align-items: flex-start;
+    align-items: stretch;
     position: relative;
   }
 
@@ -1858,14 +1858,14 @@ font-weight: 600;
     font-size: 28px;
     color: #5ACEE5;
     opacity: 0.5;
-    position: relative;
-    top: 40px;
+    align-self: center;
     margin: 0 10px;
     flex-shrink: 0;
   }
 
   .process-step {
     display: flex;
+    align-items: center;
     cursor: pointer;
     max-width: 300px;
     flex: 1;
@@ -1897,7 +1897,7 @@ font-weight: 600;
     padding-left: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .process-title {
