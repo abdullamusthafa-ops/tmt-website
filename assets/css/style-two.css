@@ -31,7 +31,9 @@ Version      : 1.0
 */
 body {
 color: #fff;
-font-family: 'IBM Plex Sans', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
 font-size: 16px;
 font-weight: 400;
 line-height: 1.65;
@@ -47,14 +49,15 @@ h4,
 h5,
 h6 {
   margin-top: 0px;
-  font-family: 'IBM Plex Sans', 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #fff;
-  font-weight: 600;
+  font-weight: 500;
   position: relative;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
 }
 a {
-font-family: 'IBM Plex Sans', 'Poppins', sans-serif;
+font-family: 'Poppins', sans-serif;
 text-decoration: none;
 -webkit-transition: all 0.2s ease 0s;
 transition: all 0.2s ease 0s;
@@ -79,19 +82,19 @@ li {
 
 ::-webkit-input-placeholder {
   font-weight: 400;
-font-family: 'IBM Plex Sans', 'Poppins', sans-serif }
+font-family: 'Poppins', sans-serif }
 
 :-moz-placeholder {
   font-weight: 400;
-font-family: 'IBM Plex Sans', 'Poppins', sans-serif}
+font-family: 'Poppins', sans-serif}
 
 ::-moz-placeholder {
   font-weight: 400;
-font-family: 'IBM Plex Sans', 'Poppins', sans-serif}
+font-family: 'Poppins', sans-serif}
 
 :-ms-input-placeholder {
   font-weight: 400;
-font-family: 'IBM Plex Sans', 'Poppins', sans-serif}
+font-family: 'Poppins', sans-serif}
 .form-control::placeholder {
 	color: #fff;
 	opacity: 1;
@@ -410,15 +413,15 @@ border:2px solid #56C3DE;
 .hero-text h2 {
 	color: #fff;
 	font-size: 60px;
-	font-weight: 700;
-	line-height: 1.1;
-	letter-spacing: -1.5px;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: -2px;
 	padding-top: 70px;
 	margin-bottom: 20px;
 	text-align: center;
 }
 @media only screen and (max-width:1024px) {
-.hero-text h2 { font-size: 52px; }
+.hero-text h2 { font-size: 50px; letter-spacing: -1.5px; }
 }
 @media only screen and (max-width:768px) { 
 .hero-text h2 {font-size:42px;line-height:52px;}
@@ -1421,7 +1424,7 @@ ul.blog_pagination li a:hover {
 	display: block;
 	font-size: 14px;
 	padding: 5px 0;
-	font-family: 'IBM Plex Sans', 'Poppins', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
 }
 .categories ul li a:hover { color: #ffaa17 }
@@ -2152,34 +2155,35 @@ font-weight: 600;
    TYPOGRAPHY SYSTEM — TMT Consultancy
    ============================================================ */
 
-/* Enforce IBM Plex Sans across all text elements */
+/* Enforce Poppins across all text elements */
 *, *::before, *::after {
   font-family: inherit;
 }
 .navbar-custom .navbar-nav li a {
-  font-family: 'IBM Plex Sans', 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 15px !important;
   font-weight: 400;
-  letter-spacing: 0.1px;
+  letter-spacing: -0.1px;
 }
 .section-title h1 {
-  letter-spacing: -0.5px;
+  font-weight: 500;
+  letter-spacing: -1px;
 }
 /* Responsive type scale */
 @media only screen and (max-width: 768px) {
-  .hero-text h2 { font-size: 38px !important; letter-spacing: -0.8px; }
+  .hero-text h2 { font-size: 38px !important; letter-spacing: -1px; }
   .h2-font { font-size: 30px !important; }
   .section-title h1 { font-size: 30px !important; }
   h1.section-title-white { font-size: 30px !important; }
 }
 @media only screen and (max-width: 480px) {
-  .hero-text h2 { font-size: 32px !important; letter-spacing: -0.5px; }
+  .hero-text h2 { font-size: 32px !important; letter-spacing: -0.8px; }
 }
 /* Process step titles */
 .process-title {
   font-size: 18px !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.2px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.3px !important;
 }
 .process-desc {
   font-size: 14px !important;
@@ -2191,23 +2195,25 @@ font-weight: 600;
   font-size: 16px;
   line-height: 1.7;
   color: rgba(255,255,255,0.65);
+  letter-spacing: -0.2px;
 }
 /* Footer typography */
 footer h5 {
   font-size: 14px !important;
   font-weight: 600 !important;
-  letter-spacing: 0.8px !important;
+  letter-spacing: 0.6px !important;
   text-transform: uppercase !important;
 }
 /* Download area carousel text */
 .app-text h2 {
-  letter-spacing: -0.5px !important;
-  font-weight: 600 !important;
+  letter-spacing: -1px !important;
+  font-weight: 500 !important;
 }
 .app-text p {
   font-size: 16px !important;
   line-height: 1.65 !important;
   color: rgba(255,255,255,0.65) !important;
+  letter-spacing: -0.2px !important;
 }
 
 /* ============================================================
