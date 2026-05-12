@@ -548,49 +548,6 @@ h1, h2, h3, h4, h5 {
     animation: ring-pulse 4s ease-in-out infinite;
 }
 
-/* Rotating wrapper — spins the dot around the ring */
-.moon-ring-spinner {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    animation: ring-spin 10s linear infinite;
-}
-
-/* Glowing dot at the top of the spinner */
-.moon-ring-spinner::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow:
-        0 0 6px 3px rgba(90, 206, 229, 1),
-        0 0 18px 7px rgba(90, 206, 229, 0.65),
-        0 0 40px 14px rgba(90, 206, 229, 0.25);
-}
-
-/* Trailing comet tail fading behind the dot */
-.moon-ring-spinner::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 80px;
-    transform-origin: top center;
-    background: linear-gradient(to bottom, rgba(90, 206, 229, 0.55), transparent);
-    border-radius: 2px;
-}
-
-@keyframes ring-spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
 
 @keyframes ring-pulse {
     0%, 100% { border-color: rgba(90, 206, 229, 0.12); }
@@ -598,8 +555,7 @@ h1, h2, h3, h4, h5 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .moon-light-ring,
-    .moon-ring-spinner { animation: none; }
+    .moon-light-ring { animation: none; }
 }
 </style>
 
@@ -659,9 +615,7 @@ h1, h2, h3, h4, h5 {
 	<!-- START HOME -->
 	<section id="home" class="home_bg">
 		<!-- Moon border lighting animation -->
-		<div class="moon-light-ring" aria-hidden="true">
-			<div class="moon-ring-spinner"></div>
-		</div>
+		<div class="moon-light-ring" aria-hidden="true"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
