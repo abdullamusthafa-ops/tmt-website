@@ -532,6 +532,73 @@ h1, h2, h3, h4, h5 {
   transform: none !important;
   visibility: visible !important;
 }
+
+/* ── Moon border lighting ── */
+.moon-light-ring {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85vw;
+    height: 85vw;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Static faint ring */
+.moon-light-ring::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(90, 206, 229, 0.18);
+    animation: ring-pulse 4s ease-in-out infinite;
+}
+
+/* Sweeping comet trail */
+.moon-light-ring::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 60%,
+        rgba(90, 206, 229, 0.06) 72%,
+        rgba(90, 206, 229, 0.40) 86%,
+        rgba(180, 245, 255, 0.85) 94%,
+        rgba(255, 255, 255, 1) 98%,
+        transparent 100%
+    );
+    -webkit-mask: radial-gradient(
+        farthest-side,
+        transparent calc(100% - 3px),
+        white calc(100% - 1px)
+    );
+    mask: radial-gradient(
+        farthest-side,
+        transparent calc(100% - 3px),
+        white calc(100% - 1px)
+    );
+    animation: moon-comet 10s linear infinite;
+}
+
+@keyframes moon-comet {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes ring-pulse {
+    0%, 100% { opacity: 0.5; }
+    50%       { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .moon-light-ring::before,
+    .moon-light-ring::after { animation: none; }
+}
 </style>
 
 <body data-spy="scroll" data-offset="80">
@@ -589,6 +656,8 @@ h1, h2, h3, h4, h5 {
 
 	<!-- START HOME -->
 	<section id="home" class="home_bg">
+		<!-- Moon border lighting animation -->
+		<div class="moon-light-ring" aria-hidden="true"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
