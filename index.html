@@ -552,37 +552,23 @@ h1, h2, h3, h4, h5 {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    border: 1px solid rgba(90, 206, 229, 0.12);
+    border: 1px solid rgba(90, 206, 229, 0.15);
 }
 
-/* Light sweeping along the border */
+/* Glowing arc that sweeps around the border */
 .moon-light-ring::after {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -1px;
     border-radius: 50%;
-    background: conic-gradient(
-        from 0deg,
-        transparent 0%,
-        transparent 55%,
-        rgba(90, 206, 229, 0.08) 68%,
-        rgba(90, 206, 229, 0.55) 82%,
-        rgba(190, 245, 255, 0.95) 91%,
-        rgba(255, 255, 255, 1) 96%,
-        rgba(90, 206, 229, 0.4) 99%,
-        transparent 100%
-    );
-    -webkit-mask: radial-gradient(
-        farthest-side,
-        transparent calc(100% - 2.5px),
-        white calc(100% - 0.5px)
-    );
-    mask: radial-gradient(
-        farthest-side,
-        transparent calc(100% - 2.5px),
-        white calc(100% - 0.5px)
-    );
-    animation: border-light-sweep 8s linear infinite;
+    border: 2px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.95);
+    border-right-color: rgba(90, 206, 229, 0.4);
+    box-shadow:
+        0 0 8px 3px rgba(90, 206, 229, 0.9),
+        0 0 22px 8px rgba(90, 206, 229, 0.5),
+        0 0 50px 15px rgba(90, 206, 229, 0.15);
+    animation: border-light-sweep 6s linear infinite;
 }
 
 @keyframes border-light-sweep {
