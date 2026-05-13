@@ -29,34 +29,63 @@ Version      : 1.0
 * 01.GENERAL STYLE
 * ----------------------------------------------------------------------------------------
 */
+/*
+ * TYPOGRAPHY SYSTEM
+ * Base: 16px | Scale: 14 → 16 → 18 → 22 → 28 → 36 → 48
+ * Font: Poppins | Weights: 400 body, 500 subheadings, 600 headings
+ * Muted text: rgba(255,255,255,0.6)
+ */
 body {
-color: #fff;
-font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-font-size: 16px;
-font-weight: 400;
-line-height: 1.65;
-background:#000;
-overflow-x:hidden;
+	color: #fff;
+	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.7;
+	background: #000;
+	overflow-x: hidden;
 }
 html,
-body { height: 100%;position:relative;  }
+body { height: 100%; position: relative; }
 html { scroll-behavior: smooth; }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0px;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  font-weight: 500;
-  position: relative;
-  letter-spacing: -0.5px;
-  line-height: 1.3;
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	font-family: 'Poppins', sans-serif;
+	color: #fff;
+	font-weight: 600;
+	position: relative;
+	line-height: 1.2;
+	letter-spacing: -0.3px;
 }
+
+/* Type scale */
+h1 { font-size: 48px; letter-spacing: -1px; }
+h2 { font-size: 36px; letter-spacing: -0.5px; }
+h3 { font-size: 22px; letter-spacing: -0.3px; }
+h4 { font-size: 18px; letter-spacing: 0; }
+h5 { font-size: 16px; letter-spacing: 0; }
+h6 { font-size: 14px; letter-spacing: 0; }
+
+/* Responsive type scale */
+@media (max-width: 1024px) {
+	h1 { font-size: 40px; }
+	h2 { font-size: 32px; }
+}
+@media (max-width: 768px) {
+	h1 { font-size: 32px; letter-spacing: -0.5px; }
+	h2 { font-size: 26px; }
+	h3 { font-size: 20px; }
+}
+@media (max-width: 480px) {
+	h1 { font-size: 26px; }
+	h2 { font-size: 22px; }
+}
+
+/* Consistent muted text */
+.text-muted-tmt { color: rgba(255,255,255,0.6) !important; }
+p { color: rgba(255,255,255,0.65); line-height: 1.75; font-size: 15px; }
 a {
 font-family: 'Poppins', sans-serif;
 text-decoration: none;
@@ -417,63 +446,62 @@ border:2px solid #56C3DE;
 	overflow: hidden;
 }
 
-/* Subtle pulsing glow on the background arc */
-.home_bg::after {
+/* CSS arc globe — replaces hero-bg.png */
+.home_bg::before {
 	content: '';
 	position: absolute;
-	top: 115%;
+	top: 155%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 100vw;
-	height: 100vw;
+	width: 140vw;
+	height: 140vw;
 	border-radius: 50%;
+	background: radial-gradient(ellipse at 50% 18%, #122a3e 0%, #0b1e2e 22%, #060f1c 50%, #020810 78%, #000 100%);
+	border: 1.5px solid rgba(90, 206, 229, 0.5);
 	pointer-events: none;
 	z-index: 0;
-	background: transparent;
-	box-shadow:
-		0 0 12px 4px rgba(90, 206, 229, 0.35),
-		0 0 30px 10px rgba(90, 206, 229, 0.12),
-		0 0 60px 20px rgba(90, 206, 229, 0.05);
-	animation: arc-glow-pulse 4s ease-in-out infinite;
+	animation: arc-glow 3s ease-in-out infinite;
 }
 
-@keyframes arc-glow-pulse {
+@keyframes arc-glow {
 	0%, 100% {
 		box-shadow:
-			0 0 10px 3px rgba(90, 206, 229, 0.25),
-			0 0 24px 8px rgba(90, 206, 229, 0.08),
-			0 0 50px 16px rgba(90, 206, 229, 0.03);
+			0 0 12px 4px rgba(90, 206, 229, 0.3),
+			0 0 30px 10px rgba(90, 206, 229, 0.1),
+			inset 0 0 25px 8px rgba(90, 206, 229, 0.04);
+		border-color: rgba(90, 206, 229, 0.4);
 	}
 	50% {
 		box-shadow:
-			0 0 16px 5px rgba(90, 206, 229, 0.5),
-			0 0 38px 13px rgba(90, 206, 229, 0.18),
-			0 0 70px 25px rgba(90, 206, 229, 0.07);
+			0 0 22px 7px rgba(90, 206, 229, 0.65),
+			0 0 55px 18px rgba(90, 206, 229, 0.22),
+			inset 0 0 50px 16px rgba(90, 206, 229, 0.08);
+		border-color: rgba(90, 206, 229, 0.9);
 	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.home_bg::after { animation: none; }
+	.home_bg::before { animation: none; }
 }
 
 .hero-text h2 {
 	color: #fff;
-	font-size: 58px;
-	font-weight: 500;
-	line-height: 1.15;
-	letter-spacing: -2px;
-	padding-top: 28px;
-	margin-bottom: 20px;
+	font-size: 52px;
+	font-weight: 600;
+	line-height: 1.18;
+	letter-spacing: -1px;
+	padding-top: 20px;
+	margin-bottom: 16px;
 	text-align: center;
 }
 @media only screen and (max-width:1024px) {
-.hero-text h2 { font-size: 50px; letter-spacing: -1.5px; }
+	.hero-text h2 { font-size: 44px; letter-spacing: -0.8px; }
 }
-@media only screen and (max-width:768px) { 
-.hero-text h2 {font-size:42px;line-height:52px;}
+@media only screen and (max-width:768px) {
+	.hero-text h2 { font-size: 34px; line-height: 1.25; letter-spacing: -0.5px; }
 }
-@media only screen and (max-width:480px) { 
-.hero-text h2 {font-size:28px;}
+@media only screen and (max-width:480px) {
+	.hero-text h2 { font-size: 26px; letter-spacing: -0.3px; }
 }
 .hero-text p {
 	margin-top: 14px;
@@ -663,13 +691,15 @@ font-size: 20px;
 	margin-bottom: 20px;
 }
 .buy_sell_list p{overflow: hidden;}
-@media only screen and (max-width:768px) { 
+@media only screen and (max-width:768px) {
 .portfolio_list_img {
 margin-top:40px;
 margin-bottom:40px;
 text-align:center;
 }
 }
+
+
 
 .how_to_buy_area{}
 .single_how_to_buy {
@@ -2517,16 +2547,6 @@ footer h5 {
 	border-radius: 20px !important;
 }
 
-/* --- Who We Serve cards --- */
-.buy_sell_list {
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	transition: all 0.3s ease !important;
-}
-.buy_sell_list:hover {
-	border-color: rgba(90,206,229,0.6) !important;
-	box-shadow: 0 8px 24px rgba(90,206,229,0.1) !important;
-}
 
 /* --- Section heading accent underline --- */
 .section-title h1,
@@ -2638,3 +2658,174 @@ select:focus-visible {
 .section-reveal.delay-200 { transition-delay: 0.2s; }
 .section-reveal.delay-300 { transition-delay: 0.3s; }
 .section-reveal.delay-400 { transition-delay: 0.4s; }
+
+/* ============================================================
+   TYPOGRAPHY FINAL OVERRIDES — Clean consistent system
+   ============================================================ */
+
+/* Section heading (h2) used across all sections */
+.h2-font {
+	font-size: 36px !important;
+	font-weight: 600 !important;
+	line-height: 1.2 !important;
+	letter-spacing: -0.5px !important;
+	color: #fff !important;
+}
+@media (max-width: 768px) { .h2-font { font-size: 28px !important; } }
+@media (max-width: 480px) { .h2-font { font-size: 24px !important; } }
+
+/* Section subtitle / description paragraph */
+.section-desc {
+	font-size: 15px;
+	line-height: 1.75;
+	color: rgba(255,255,255,0.6);
+	max-width: 620px;
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: 400;
+}
+
+/* Hero paragraph */
+.hero-text p {
+	font-size: 16px !important;
+	line-height: 1.75 !important;
+	color: rgba(255,255,255,0.65) !important;
+}
+
+/* "What Makes Us Different" item text */
+.section1 .item p {
+	font-size: 15px !important;
+	line-height: 1.7 !important;
+	color: rgba(255,255,255,0.6) !important;
+}
+.section1 .item h3 {
+	font-size: 20px !important;
+	font-weight: 600 !important;
+	letter-spacing: -0.3px !important;
+}
+
+/* Who We Serve cards */
+.buy_sell_list p {
+	font-size: 15px !important;
+	font-weight: 500 !important;
+	line-height: 1.5 !important;
+	color: rgba(255,255,255,0.85) !important;
+}
+
+/* Program cards */
+.program-card__title {
+	font-size: 15px !important;
+	font-weight: 600 !important;
+	letter-spacing: -0.2px !important;
+}
+.program-card__desc {
+	font-size: 13px !important;
+	line-height: 1.6 !important;
+	color: rgba(255,255,255,0.6) !important;
+}
+
+/* Navbar */
+.navbar-custom .navbar-nav li a {
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	letter-spacing: 0 !important;
+}
+
+
+/* ============================================================
+   AUDIT FIXES — All 25 issues
+   ============================================================ */
+
+/* #3 — Hero h1 (was h2) */
+.hero-text h1 {
+	color: #fff;
+	font-size: 52px;
+	font-weight: 600;
+	line-height: 1.18;
+	letter-spacing: -1px;
+	padding-top: 20px;
+	margin-bottom: 16px;
+	text-align: center;
+}
+@media (max-width: 1024px) { .hero-text h1 { font-size: 44px; } }
+@media (max-width: 768px)  { .hero-text h1 { font-size: 34px; letter-spacing: -0.5px; } }
+@media (max-width: 480px)  { .hero-text h1 { font-size: 26px; } }
+
+/* #6 — Hero badge centered without <center> tag */
+.hero-badge-wrap {
+	text-align: center;
+}
+
+/* #12 — Contact section styles (replacing inline) */
+.contact-heading {
+	font-size: 36px !important;
+	font-weight: 700 !important;
+	letter-spacing: -0.5px !important;
+	margin-bottom: 12px !important;
+}
+.contact-subtext {
+	color: rgba(255,255,255,0.6);
+	font-size: 15px;
+	line-height: 1.7;
+	margin-bottom: 32px;
+}
+
+/* #13 / #23 / #24 — Footer links (replacing onmouseover JS) */
+.footer-link {
+	color: rgba(255,255,255,0.55);
+	font-size: 14px;
+	transition: color 0.2s ease;
+	display: inline-block;
+}
+.footer-link:hover {
+	color: #5ACEE5 !important;
+}
+
+/* #17 / #23 — Footer social icons */
+.footer-socials {
+	display: flex;
+	gap: 12px;
+	margin-top: 10px;
+}
+.footer-social-link {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border: 1px solid rgba(90,206,229,0.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #5ACEE5;
+	font-size: 14px;
+	transition: background 0.2s ease, border-color 0.2s ease;
+}
+.footer-social-link:hover {
+	background: rgba(90,206,229,0.12);
+	border-color: rgba(90,206,229,0.7);
+	color: #5ACEE5;
+}
+
+/* #14 — Who We Serve card headings */
+.serve-card-title {
+	font-size: 15px !important;
+	font-weight: 500 !important;
+	line-height: 1.5 !important;
+	color: rgba(255,255,255,0.9) !important;
+	margin: 0 !important;
+	letter-spacing: 0 !important;
+}
+
+/* #9 — CTA section h2 (tmt_title) */
+.tmt_title {
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -0.5px;
+	line-height: 1.2;
+}
+@media (max-width: 768px) { .tmt_title { font-size: 28px; } }
+
+/* #4 — tmt_cta as anchor (not button inside a) */
+a.tmt_cta {
+	display: inline-block;
+	cursor: pointer;
+}
