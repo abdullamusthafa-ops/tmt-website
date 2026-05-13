@@ -533,49 +533,6 @@ h1, h2, h3, h4, h5 {
   visibility: visible !important;
 }
 
-/* ── Moon arc glow ── */
-.moon-arc-glow {
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 100vw;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-    border: 1.5px solid rgba(90, 206, 229, 0.3);
-    box-shadow:
-        0 0 10px 3px rgba(90, 206, 229, 0.5),
-        0 0 25px 8px rgba(90, 206, 229, 0.25),
-        0 0 55px 18px rgba(90, 206, 229, 0.08),
-        inset 0 0 10px 3px rgba(90, 206, 229, 0.12);
-    animation: arc-glow-pulse 3s ease-in-out infinite;
-}
-
-@keyframes arc-glow-pulse {
-    0%, 100% {
-        border-color: rgba(90, 206, 229, 0.15);
-        box-shadow:
-            0 0 6px 2px rgba(90, 206, 229, 0.2),
-            0 0 16px 5px rgba(90, 206, 229, 0.08),
-            0 0 35px 10px rgba(90, 206, 229, 0.04),
-            inset 0 0 6px 2px rgba(90, 206, 229, 0.05);
-    }
-    50% {
-        border-color: rgba(90, 206, 229, 0.8);
-        box-shadow:
-            0 0 14px 5px rgba(90, 206, 229, 0.75),
-            0 0 35px 12px rgba(90, 206, 229, 0.4),
-            0 0 70px 22px rgba(90, 206, 229, 0.15),
-            inset 0 0 14px 5px rgba(90, 206, 229, 0.2);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .moon-arc-glow { animation: none; }
-}
-
 </style>
 
 <body data-spy="scroll" data-offset="80">
@@ -633,8 +590,7 @@ h1, h2, h3, h4, h5 {
 
 	<!-- START HOME -->
 	<section id="home" class="home_bg">
-		<div class="moon-arc-glow" aria-hidden="true"></div>
-		<div class="container">
+<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<center><button class="btn-inner-glow fade-up delay-1">

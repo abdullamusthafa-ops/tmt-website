@@ -414,7 +414,6 @@ border:2px solid #56C3DE;
 	position: relative;
 	padding-bottom: 0;
 	min-height: 100vh;
-	overflow: hidden;
 }
 .hero-text h2 {
 	color: #fff;
